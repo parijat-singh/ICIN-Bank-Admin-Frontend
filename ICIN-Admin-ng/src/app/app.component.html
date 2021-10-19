@@ -1,0 +1,31 @@
+<div *ngIf="authenticationService.isAuthenticated">
+  <h2>Welcome to ICIN Bank Admin site</h2>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <a class="navbar-brand" routerLink="/user-account">ICIN Bank Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02"
+      aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample02">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/user-account"> User Account </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/authorize"> Account Authorization </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/checkbook-requests"> Checkbook Requests </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" (click)="logout()"> Sign Out</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+</div>
+<router-outlet></router-outlet>

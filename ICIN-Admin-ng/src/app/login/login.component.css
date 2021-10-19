@@ -1,0 +1,17 @@
+.container{
+   margin: 10rem auto;
+   width:40em;
+}
+
+input{
+    margin-bottom: 2rem ;
+    margin-top: 2rem;
+}
+.i{
+    color: red;
+}
+html{
+    background-image: linear-gradient(#009933,white);
+}
+
+h1 {text-align: center;}

@@ -1,0 +1,25 @@
+<div class="container">
+  <h1 class="bg-primary">Administrator Login</h1>
+  <i class="text-danger"> !!Authorized Personnel Only!!</i>
+  <form class="form-login" (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+
+    <label for="inputUserName" class="sr-only">UserName</label>
+    <input type="text" id="inputUserName" name="inputUserName" class="form-control"
+      [ngClass]="{ 'is-invalid': submitted && inputUserName.errors }" ngModel placeholder="User Name" required autofocus
+      #inputUserName=ngModel>
+    <div *ngIf="submitted && inputUserName.errors" class="invalid-feedback">
+      <span *ngIf="inputUserName.errors.required">Please enter a valid UserName</span>
+    </div>
+
+
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" name="password" class="form-control"
+      [ngClass]="{ 'is-invalid': submitted && password.errors }" ngModel placeholder="Password" required
+      #password=ngModel>
+    <div *ngIf="submitted && password.errors" class="invalid-feedback">
+      <span *ngIf="password.errors.required">Please enter a valid Password</span>
+    </div>
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+  </form>
+</div>

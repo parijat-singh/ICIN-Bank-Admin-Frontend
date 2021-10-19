@@ -1,0 +1,37 @@
+<table class="table table-bordered table-striped table-hover table-responsive" style="overflow-x:auto;">
+  <thead>
+    <tr style="text-align: center" class=bg-warning>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>User Name</th>
+      <th>Checking Account #</th>
+      <th>Savings Account #</th>
+      <th>Enable</th>
+      <th>Disable</th>
+      <th>Entitlements</th>
+      <th>Change Entitlements</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users" style="text-align: center">
+      <td>{{user.fname}}</td>
+      <td>{{user.lname}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.primaryAccno}}</td>
+      <td>{{user.savingsAccno}}</td>
+      <td><button (click)="enableLoginService(user.username)" class="btn btn-success">Enable</button></td>
+      <td><button (click)="disableLoginService(user.username)" class="btn btn-danger">Disable</button></td>
+      <td>{{user.featureStatus}}</td>
+      <td style="text-align: center">
+
+        <select (change)="filterSelected($event.target.value)">
+          <option *ngFor="let r of roles" [value]='r.value'>
+            {{r.name}}
+          </option>
+        </select>
+        <button (click)="setOption(user.username)" class="btn btn-success">Set</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
