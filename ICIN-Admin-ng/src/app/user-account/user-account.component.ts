@@ -14,9 +14,9 @@ export class UserAccountComponent implements OnInit {
 
   roles = [
     { name: " ", value: 0 },
-    { name: "Deposit Access", value: 1 },
-    { name: "Deposit + Withdraw Access", value: 2 },
-    { name: "Deposit + Withdraw + Transfer Access", value: 3 }
+    { name: "Deposit", value: 1 },
+    { name: "Deposit & Withdraw", value: 2 },
+    { name: "Deposit, Withdraw & Transfer", value: 3 }
   ]
 
   users: any[]
