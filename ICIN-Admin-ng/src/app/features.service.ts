@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import{ GlobalConstants } from './global-constants';
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class FeaturesService {
 
   id: number
-  readonly rootUrl = 'http://localhost:8900/user/';
+  readonly rootUrl = GlobalConstants.backendURL + '/user/';
   constructor(private http: HttpClient) {
 
   }

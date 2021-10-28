@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CheckbookRequest } from './model/checkbookRequest';
+import{ GlobalConstants } from './global-constants';
 
 
 @Injectable({
@@ -10,9 +11,9 @@ import { CheckbookRequest } from './model/checkbookRequest';
 export class CheckbookService {
 
   //readonly rootUrl = 'localhost:<port>/user/{username}/chequebook/request/confirm';
-  readonly rootUrl = 'http://localhost:8900/user/';
+  readonly rootUrl = GlobalConstants.backendURL + '/user/';
   //readonly dataUrl= 'localhost:<port>/chequebook/request/all';
-  readonly dataUrl = 'http://localhost:8900/chequebook/request/all';
+  readonly dataUrl = GlobalConstants.backendURL + '/chequebook/request/all';
   private data: any = []
   constructor(private http: HttpClient) { }
 

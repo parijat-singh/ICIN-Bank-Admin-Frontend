@@ -2,26 +2,25 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthorizeUser } from './model/authorizeUser';
+import{ GlobalConstants } from './global-constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthorizationService {
 
-  readonly rootUrl = 'http://localhost:8900/user/';
-
   constructor(private http: HttpClient) { }
 
   getRequestData() {
-    return this.http.get<AuthorizeUser[]>(this.rootUrl + '/unauthorized/all');
+    return this.http.get<AuthorizeUser[]>(GlobalConstants.backendURL + '/unauthorized/all');
   }
 
   authorizeAccount(username) {
-    return this.http.get(this.rootUrl + username + '/authorize');
+    return this.http.get(GlobalConstants.backendURL + username + '/authorize');
   }
 
   rejectRequest(username) {
-    return this.http.get(this.rootUrl + username + '/authorize/cancel');
+    return this.http.get(GlobalConstants.backendURL + username + '/authorize/cancel');
 
   }
 
