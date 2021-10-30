@@ -13,6 +13,8 @@ import { AuthorizeRegistrationComponent } from './authorize-registration/authori
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { from } from 'rxjs';
+import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { from } from 'rxjs';
     UserAccountComponent,
     CheckbookRequestsComponent,
     AuthorizeRegistrationComponent,
+    ContactComponent,
+    AboutComponent,
 
   ],
   imports: [

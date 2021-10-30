@@ -14,6 +14,6 @@ export class UsersService {
   }
 
   public getAllUsers() {
-    return this.http.get<any[]>(GlobalConstants.backendURL + "user/all");
+    return this.http.get<any[]>(GlobalConstants.backendURL + "/user/all");
   }
 }

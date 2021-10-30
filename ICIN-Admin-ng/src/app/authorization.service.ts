@@ -8,19 +8,20 @@ import{ GlobalConstants } from './global-constants';
   providedIn: 'root'
 })
 export class AuthorizationService {
-
+ 
+  readonly rootUrl = GlobalConstants.backendURL + '/user/';
   constructor(private http: HttpClient) { }
 
   getRequestData() {
-    return this.http.get<AuthorizeUser[]>(GlobalConstants.backendURL + '/unauthorized/all');
+    return this.http.get<AuthorizeUser[]>(this.rootUrl + '/unauthorized/all');
   }
 
   authorizeAccount(username) {
-    return this.http.get(GlobalConstants.backendURL + username + '/authorize');
+    return this.http.get(this.rootUrl + '/authorize');
   }
 
   rejectRequest(username) {
-    return this.http.get(GlobalConstants.backendURL + username + '/authorize/cancel');
+    return this.http.get(this.rootUrl + '/authorize/cancel');
 
   }
 
