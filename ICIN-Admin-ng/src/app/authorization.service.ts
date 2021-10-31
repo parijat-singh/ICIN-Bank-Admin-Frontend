@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthorizeUser } from './model/authorizeUser';
-import{ GlobalConstants } from './global-constants';
+import { GlobalConstants } from './global-constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthorizationService {
- 
+
   readonly rootUrl = GlobalConstants.backendURL + '/user/';
+
   constructor(private http: HttpClient) { }
 
   getRequestData() {
@@ -17,11 +18,11 @@ export class AuthorizationService {
   }
 
   authorizeAccount(username) {
-    return this.http.get(this.rootUrl + '/authorize');
+    return this.http.get(this.rootUrl + username + '/authorize');
   }
 
   rejectRequest(username) {
-    return this.http.get(this.rootUrl + '/authorize/cancel');
+    return this.http.get(this.rootUrl + username + '/authorize/cancel');
 
   }
 
