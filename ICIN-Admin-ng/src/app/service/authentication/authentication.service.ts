@@ -24,8 +24,7 @@ export class AuthenticationService {
     return false;
 
   }
-
-
+  
   checkCredentials(login: LoginData): boolean {
     return this.checkEmail(login.username) && this.checkPassword(login.password);
   }
@@ -42,6 +41,7 @@ export class AuthenticationService {
     this.isAuthenticated = false;
     this.router.navigate(['']);
   }
+
 
 
 }

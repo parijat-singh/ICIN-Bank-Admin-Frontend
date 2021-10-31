@@ -7,7 +7,7 @@ import { AuthenticationService } from 'src/app/service/authentication/authentica
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Admin Portal';
+  title = 'ICIN Admin Site';
 
   constructor(public authenticationService: AuthenticationService) {
 
